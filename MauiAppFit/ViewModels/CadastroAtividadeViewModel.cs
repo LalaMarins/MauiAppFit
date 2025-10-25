@@ -110,7 +110,31 @@ namespace MauiAppFit.ViewModels
 
                      await Shell.Current.GoToAsync("//MinhasAtividades");
                  }
-             });
+                 catch (Exception ex)
+                    {
+                        await Shell.Current.DisplayAlert("Ops!", ex.Message, "Ok");
+                 }
+             });//fim do SalvarAtividade
+        }
+
+        public ICommand VerAtividade
+        {
+            get => new Command<int>(async (int id) =>
+            {
+                try
+                {
+                    Atividade model = await App.Database.GetById(id);
+                    this.Id = model.Id;
+                    this.Descricao = model.Descricao;
+                    this.Data = model.Data;
+                    this.Peso = model.Peso;
+                    this.Observacoes = model.Observacoes;
+                }
+                catch (Exception ex)
+                {
+                    await Shell.Current.DisplayAlert("Ops!", ex.Message, "Ok");
+                }
+            });
         }
     }
 }
