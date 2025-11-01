@@ -17,7 +17,7 @@
             </StackLayout>
             <RefreshView IsRefreshing="{Binding EstaAtualizando, Mode=OneWay}" Command="{Binding AtualizarLista}">
 
-                <ListView ItemSource="{Binding ListaAtividades}">
+                <ListView ItemsSource="{Binding ListaAtividades}">
                     <ListView.Header>
                         <Grid RowDefinitions="Auto" ColumnDefinitions="*,*,*">
                             <Label Grid.Row="0" Grid.Column="0" Text="Id"/>
