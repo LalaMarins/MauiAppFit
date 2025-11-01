@@ -1,4 +1,4 @@
-﻿using MauiAppFit.Helpers
+﻿using MauiAppFit.Helpers;
 
     
 namespace MauiAppFit
@@ -22,6 +22,7 @@ namespace MauiAppFit
         public App()
         {
             InitializeComponent();
+
             MainPage = new AppShell();
         }
 
